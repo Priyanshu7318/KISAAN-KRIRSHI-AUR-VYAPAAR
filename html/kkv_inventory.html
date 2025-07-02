@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVENTORY MANAGEMENT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/kkv_inventory.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="/IMAGES/KKV2.png" alt="KKV Logo" class="logo">
+                    <div>
+                        <div class="brand-name">KKV</div>
+                        <div class="brand-fullform">KISAAN KRISHI OR VAYAPAAR</div>
+                    </div>
+                    <div class="page-heading">
+                        <h1>INVENTORY MANAGEMENT</h1>
+                    </div>
+                </div>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <nav class="nav-links">
+                    <a href="/html/kkv_mainpage.html"><button class="nav-btn">
+                        <i class="fas fa-home"></i>Home
+                    </button></a>
+                    <a href="/html/kkv_contact.html"><button class="nav-btn">
+                        <i class="fas fa-phone"></i>Contact
+                    </button></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inventory Management Section -->
+    <div>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price (₹)</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryBody">
+                <!-- Sample Data -->
+                <tr>
+                    <td>Apples</td>
+                    <td>Fruits</td>
+                    <td>₹120/kg</td>
+                    <td>50 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kiwi</td>
+                    <td>Fruits</td>
+                    <td>₹200/kg</td>
+                    <td>100 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Guava</td>
+                    <td>Fruits</td>
+                    <td>₹60/kg</td>
+                    <td>100 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tomatoes</td>
+                    <td>Vegetables</td>
+                    <td>₹40/kg</td>
+                    <td>30 kg</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Potato</td>
+                    <td>Vegetables</td>
+                    <td>₹40/kg</td>
+                    <td>70 kg</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Carrot</td>
+                    <td>Vegetables</td>
+                    <td>₹30/kg</td>
+                    <td>60 kg</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wheat</td>
+                    <td>Crops</td>
+                    <td>₹25/kg</td>
+                    <td>100 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rice</td>
+                    <td>Crops</td>
+                    <td>₹20/kg</td>
+                    <td>100 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maze</td>
+                    <td>Crops</td>
+                    <td>₹55/kg</td>
+                    <td>100 kg</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tractor</td>
+                    <td>Machinery</td>
+                    <td>₹500,000</td>
+                    <td>2 pieces</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Plough</td>
+                    <td>Machinery</td>
+                    <td>₹30,000</td>
+                    <td>7 pieces</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+                <td>Harvestor</td>
+                    <td>Machinery</td>
+                    <td>₹10,000</td>
+                    <td>5 pieces</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editItem(this)">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+
+    <!-- Floating Add Button -->
+    <button class="floating-btn" onclick="openModal()">+</button>
+
+    <!-- Add/Edit-->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Add New Item</div>
+            <div class="modal-body">
+                <input type="text" id="itemName" placeholder="Item Name">
+                <select id="itemCategory" onchange="toggleFields()">
+                    <option value="">Select Category</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="crops">Crops</option>
+                    <option value="machinery">Machinery</option>
+                </select>
+                <div id="generalFields">
+                    <input type="number" id="itemPrice" placeholder="Price (₹)/KG">
+                    <input type="number" id="itemQuantity" placeholder="Quantity">
+                    <select id="itemUnit">
+                        <option value="kg">kg</option>
+                        <option value="grams">grams</option>
+                        <option value="pieces">pieces</option>
+                    </select>
+                </div>
+                <div id="machineryFields" style="display: none;">
+                    <input type="number" id="machinePrice" placeholder="Machine Price (₹)">
+                    <input type="number" id="machineryQuantity" placeholder="Machinery Quantity">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="saveItem()">Save</button>
+                <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-item">
+                    <h1 class="fw-bold text-primary mb-4">K<span class="text-secondary">K</span>V</h1>
+                    <p>Here is the KKV(KISAAN KRISHI OR VAYAPAAR) website for the buying or selling agricultural products like crops, vegetables, fruits, machinery, livestocks etc.</p>
+                    <div class="social-icons">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+  
+                <!-- Address -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Chandigarh, India</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-3"></i>info@KKV.com</p>
+                </div>
+  
+                <!-- Quick Links -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="#">About Us</a>
+                    <a class="btn btn-link" href="#">Contact Us</a>
+                    <a class="btn btn-link" href="#">Our Services</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Support</a>
+                </div>
+  
+                <!-- Newsletter -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Access special promotions and deals only available to newsletter subscribers.</p>
+                </div>
+            </div>
+        </div>
+        <!-- License Section -->
+        <div class="license">
+            <div class="container">
+                <p class="text-center">
+                    &copy; <span class="highlight">2025 KKV</span>. All Rights Reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <script src="/js/kkv_inventory.js"></script>
+</body>
+</html>

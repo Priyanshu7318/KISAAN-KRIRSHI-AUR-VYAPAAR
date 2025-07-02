@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKV - Advanced Market Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="/css/kkv_market_analysis.css">
+</head>
+<body>
+
+    <div class="main-header">
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="/IMAGES/KKV2.png" alt="KKV Logo" class="logo">
+                <div class="brand-info">
+                    <h1 class="brand-name">KKV</h1>
+                    <span class="brand-tagline">KISAAN KRISHI AUR VAYAPAAR</span>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <div class="nav-section">
+                    <a href="#price-action" class="nav-item" data-section="price-action">
+                        <i class="fas fa-chart-line"></i>
+                        Price Action
+                    </a>
+                    <a href="#live-market" class="nav-item" data-section="live-market">
+                        <i class="fas fa-shopping-cart"></i>
+                        Live Market Price
+                    </a>
+                    <a href="#market-news" class="nav-item" data-section="market-news">
+                        <i class="fas fa-newspaper"></i>
+                        Market News
+                    </a>
+                </div>
+                <div class="market-summary">
+                    <div class="summary-item">
+                        <span class="label"><b>Market Index</b></span>
+                        <span class="value up">4,521.23 ↑</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label"><b>24h Volume</span></b>
+                        <span class="value">₹458.6M</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="price-action">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line stat-icon"></i>
+                    <div class="stat-value">₹58.7M</div>
+                    <div class="stat-label">Market Volume</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-value">3,842</div>
+                    <div class="stat-label">Active Farmers</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-exchange-alt stat-icon"></i>
+                    <div class="stat-value">12,456</div>
+                    <div class="stat-label">Daily Transactions</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percentage stat-icon"></i>
+                    <div class="stat-value">+18.5%</div>
+                    <div class="stat-label">Market Growth</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="graphs-grid">
+            <div class="graph-card">
+                <div class="graph-header">
+                    <div class="graph-title">Price Action Analysis</div>
+                    <div class="graph-actions"> 
+                        <button class="graph-button">15 D</button>
+                    </div>
+                </div>
+                <canvas id="priceActionChart"></canvas>
+            </div>
+
+            <div class="graph-card">
+                <div class="graph-header">
+                    <div class="graph-title">Market Volume</div>
+                    <div class="graph-actions"> 
+                        <button class="graph-button">1 W</button>
+                    </div>
+                </div>
+                <canvas id="volumeChart"></canvas>
+            </div>
+            <div class="graph-card">
+                <div class="graph-header">
+                    <div class="graph-title">Market Depth</div>
+                    <div class="graph-actions"> 
+                        <button class="graph-button">1 W</button>
+                    </div>
+                </div>
+                <canvas id="marketDepthChart"></canvas>
+            </div>
+            <div class="graph-card">
+                <div class="graph-header">
+                    <div class="graph-title">Market Distribution</div>
+                </div>
+                <canvas id="priceDistributionChart"></canvas>
+            </div>
+        </div>
+
+        <div class="price-table-container">
+            <div id="live-market">
+                <div class="graph-header">
+                    <div class="graph-title">Live Market Prices</div>
+                    <div class="market-status">
+                        <span class="status-dot active"></span>
+                        Live Updates
+                    </div>
+                </div>
+                <div class="state-selector">
+                    <select id="stateSelector" class="state-dropdown">
+                        <option value="">Select State</option>
+                        <optgroup label="MSP States">
+                            <option value="punjab">Punjab</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="madhyaPradesh">Madhya Pradesh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="uttarPradesh">Uttar Pradesh</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="chhattisgarh">Chhattisgarh</option>
+                        </optgroup>
+                        <optgroup label="Market Rate States">
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="tamilNadu">Tamil Nadu</option>
+                            <option value="telangana">Telangana</option>
+                            <option value="andhraPradesh">Andhra Pradesh</option>
+                            <option value="westBengal">West Bengal</option>
+                            <option value="odisha">Odisha</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="jharkhand">Jharkhand</option>
+                            <option value="assam">Assam</option>
+                            <option value="himachalPradesh">Himachal Pradesh</option>
+                            <option value="uttarakhand">Uttarakhand</option>
+                            <option value="jammuKashmir">Jammu & Kashmir</option>
+                        </optgroup>
+                    </select>
+                    <div class="price-type-indicator">
+                        <span id="priceTypeLabel" class="price-type-label">Select a state to view prices</span>
+                    </div>
+                </div>
+                <div class="market-filters">
+                    <button class="filter-btn active" data-category="all">All Commodities</button>
+                    <button class="filter-btn" data-category="grains">Grains</button>
+                    <button class="filter-btn" data-category="vegetables">Vegetables</button>
+                    <button class="filter-btn" data-category="fruits">Fruits</button>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Commodity</th>
+                            <th>Current Price</th>
+                            <th>24h Change</th>
+                            <th>24h Low</th>
+                            <th>24h High</th>
+                            <th>Volume</th>
+                            <th>Market Cap</th>
+                            <th>Supply</th>
+                            <th>Demand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="commodity-type grains">
+                            <td>
+                                <div class="commodity-info">
+                                    <img src="/IMAGES/wheat2.jpeg" alt="Wheat" class="commodity-icon">
+                                    <div>
+                                        <div class="commodity-name">Wheat</div>
+                                        <div class="commodity-grade">Premium Grade</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>₹2,600/quintal</td>
+                            <td class="trend-up">+1.5% ↑</td>
+                            <td>₹2,500</td>
+                            <td>₹3,000</td>
+                            <td>980 MT</td>
+                            <td>₹9.8M</td>
+                            <td class="supply-status medium">Medium</td>
+                            <td class="demand-status high">High</td>
+                        </tr>
+                        
+                    <tr class="commodity-type grains">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/Rice (Basmati).jpeg" alt="Basmati Rice" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Rice (Basmati)</div>
+                                    <div class="commodity-grade">Premium Grade</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹2,800/quintal</td>
+                        <td class="trend-up">+2.8% ↑</td>
+                        <td>₹2,600</td>
+                        <td>₹3,100</td>
+                        <td>1,245 MT</td>
+                        <td>₹12.5M</td>
+                        <td class="supply-status high">High</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type grains">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/maize3.jpeg" alt="Maize" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Maize</div>
+                                    <div class="commodity-grade">Organic Premium</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹2,304/quintal</td>
+                        <td class="trend-up">+3.2% ↑</td>
+                        <td>₹2,100</td>
+                        <td>₹2,600</td>
+                        <td>280 MT</td>
+                        <td>₹8.2M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type grains">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/bajra3.webp" alt="Baajra" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Baajra</div>
+                                    <div class="commodity-grade">Organic</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹2,816/quintal</td>
+                        <td class="trend-up">+2.1% ↑</td>
+                        <td>₹2,400</td>
+                        <td>₹3,000</td>
+                        <td>620 MT</td>
+                        <td>₹6.8M</td>
+                        <td class="supply-status high">High</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type grains">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/paddy1.jpeg" alt="Paddy" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Paddy</div>
+                                    <div class="commodity-grade">Organic</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹3,092/quintal</td>
+                        <td class="trend-up">+2.1% ↑</td>
+                        <td>₹2,900</td>
+                        <td>₹3,300</td>
+                        <td>620 MT</td>
+                        <td>₹6.8M</td>
+                        <td class="supply-status high">High</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type grains">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/soybean2.webp" alt="Soyabean" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Soyabean</div>
+                                    <div class="commodity-grade">Organic</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹5,350/quintal</td>
+                        <td class="trend-up">+2.1% ↑</td>
+                        <td>₹5,100</td>
+                        <td>₹5,500</td>
+                        <td>620 MT</td>
+                        <td>₹6.8M</td>
+                        <td class="supply-status high">High</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+                    
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/potato2.webp" alt="Potato" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Potato</div>
+                                    <div class="commodity-grade">Fresh Grade A</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹1,701/quintal</td>
+                        <td class="trend-up">+2.5% ↑</td>
+                        <td>₹1,500</td>
+                        <td>₹1,800</td>
+                        <td>450 MT</td>
+                        <td>₹2.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/tomato1.jpeg" alt="Tomato" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Tomato</div>
+                                    <div class="commodity-grade">Premium</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹1,205/quintal</td>
+                        <td class="trend-up">+3.2% ↑</td>
+                        <td>₹1,000</td>
+                        <td>₹1,400</td>
+                        <td>380 MT</td>
+                        <td>₹3.2M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/onion1.jpeg" alt="Onion" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Onion</div>
+                                    <div class="commodity-grade">Export Quality</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹2,677/quintal</td>
+                        <td class="trend-up">+2.8% ↑</td>
+                        <td>₹2,600</td>
+                        <td>₹2,900</td>
+                        <td>280 MT</td>
+                        <td>₹3.2M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/Capsicum.jpeg" alt="Capsicum" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Capsicum</div>
+                                    <div class="commodity-grade">Fresh Premium</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹5,421/quintal</td>
+                        <td class="trend-up">+3.5% ↑</td>
+                        <td>₹5,100</td>
+                        <td>₹5,600</td>
+                        <td>150 MT</td>
+                        <td>₹4.2M</td>
+                        <td class="supply-status low">Low</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/brinjal2.avif" alt="Brinjal" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Brinjal</div>
+                                    <div class="commodity-grade">Fresh Premium</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹2,550/quintal</td>
+                        <td class="trend-up">+3.5% ↑</td>
+                        <td>₹2,300</td>
+                        <td>₹2,700</td>
+                        <td>150 MT</td>
+                        <td>₹4.2M</td>
+                        <td class="supply-status low">Low</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type vegetables">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/mushroom1.jpg" alt="Mushroom" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Mushroom</div>
+                                    <div class="commodity-grade">Fresh Premium</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹11,009/quintal</td>
+                        <td class="trend-up">+3.5% ↑</td>
+                        <td>₹10,400</td>
+                        <td>₹14,100</td>
+                        <td>150 MT</td>
+                        <td>₹4.2M</td>
+                        <td class="supply-status low">Low</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/apple1.jpeg" alt="Apple" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Apple</div>
+                                    <div class="commodity-grade">Export Quality</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹11,615/quintal</td>
+                        <td class="trend-up">+2.8% ↑</td>
+                        <td>₹10,900</td>
+                        <td>₹16,800</td>
+                        <td>320 MT</td>
+                        <td>₹4.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/kiwi2.webp" alt="Kiwi" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Kiwi</div>
+                                    <div class="commodity-grade">Premium Export</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹15,850/quintal</td>
+                        <td class="trend-up">+4.2% ↑</td>
+                        <td>₹14,000</td>
+                        <td>₹17,700</td>
+                        <td>120 MT</td>
+                        <td>₹5.8M</td>
+                        <td class="supply-status low">Low</td>
+                        <td class="demand-status very-high">Very High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/banana2.avif" alt="Banana" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Banana</div>
+                                    <div class="commodity-grade">Import Grade A</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹18,250/quintal</td>
+                        <td class="trend-down">-1.5% ↓</td>
+                        <td>₹18,200</td>
+                        <td>₹18,500</td>
+                        <td>90 MT</td>
+                        <td>₹4.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/mangoes2.jpeg" alt="Mango" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Mango</div>
+                                    <div class="commodity-grade">Export Quality</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹9,077/quintal</td>
+                        <td class="trend-down">-1.5% ↓</td>
+                        <td>₹9,000</td>
+                        <td>₹12,200</td>
+                        <td>90 MT</td>
+                        <td>₹4.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/lichi3.jpg" alt="Litchi" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Litchi</div>
+                                    <div class="commodity-grade">Import Grade A</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹15,000/quintal</td>
+                        <td class="trend-down">-1.5% ↓</td>
+                        <td>₹14,500</td>
+                        <td>₹17,000</td>
+                        <td>90 MT</td>
+                        <td>₹4.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+
+                    <tr class="commodity-type fruits">
+                        <td>
+                            <div class="commodity-info">
+                                <img src="/IMAGES/guava1.jpg" alt="Guava" class="commodity-icon">
+                                <div>
+                                    <div class="commodity-name">Guava</div>
+                                    <div class="commodity-grade">Import Grade A</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹5,396/quintal</td>
+                        <td class="trend-down">-1.5% ↓</td>
+                        <td>₹5,000</td>
+                        <td>₹8,000</td>
+                        <td>90 MT</td>
+                        <td>₹4.8M</td>
+                        <td class="supply-status medium">Medium</td>
+                        <td class="demand-status high">High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ 
+        <!-- Market News Section -->
+        <div id="market-news" class="content-section">
+            <h2>Market News</h2>
+            <div class="news-grid">
+                <!-- News Item 1 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Record High Demand for Organic Rice</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Organic rice prices have surged due to increased demand from health-conscious consumers. Farmers are seeing a 20% increase in profits this season.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹5,200/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status very-high">Very High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status medium">Medium</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Tomato Prices Drop Due to Oversupply</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>An unexpected bumper harvest has led to a 20% drop in tomato prices across the region. Farmers are advised to store produce to avoid losses.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹1,200/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status medium">Medium</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status high">High</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Spices Export Hits All-Time High</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Indian spices exports have reached a record high, driven by strong global demand. Farmers are encouraged to increase spice cultivation.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹15,000/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status high">High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status low">Low</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Wheat Prices Stabilize After Government Intervention</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Wheat prices have stabilized after the government announced subsidies for farmers. This has helped reduce market volatility.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹2,500/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status high">High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status medium">Medium</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 5 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Record High Demand for Organic Rice</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Organic rice prices have surged due to increased demand from health-conscious consumers. Farmers are seeing a 20% increase in profits this season.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹5,200/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status very-high">Very High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status medium">Medium</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- News Item 6 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Potato Prices Rise Due to Shortage</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Potato prices have risen by 15% due to a shortage caused by unseasonal rains. Farmers are struggling to meet the demand.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹1,800/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status very-high">Very High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status low">Low</span></span>
+                        </div>
+                    </div>
+                </div>
+              <!-- News Item 7 -->
+              <div class="news-card">
+                <div class="news-header">
+                    <h3>Tomato Prices Drop Due to Oversupply</h3>
+                </div>
+                <div class="news-body">
+                    <p>An unexpected bumper harvest has led to a 20% drop in tomato prices across the region. Farmers are advised to store produce to avoid losses.</p>
+                    <div class="market-stats">
+                        <span><strong>Price:</strong> ₹1,200/quintal</span>
+                        <span><strong>Demand:</strong> <span class="demand-status medium">Medium</span></span>
+                        <span><strong>Supply:</strong> <span class="supply-status high">High</span></span>
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- News Item 8 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <h3>Onion Prices Surge Ahead of Festive Season</h3>
+                    </div>
+                    <div class="news-body">
+                        <p>Onion prices have surged by 25% ahead of the festive season. Farmers are benefiting from the increased demand.</p>
+                        <div class="market-stats">
+                            <span><strong>Price:</strong> ₹3,500/quintal</span>
+                            <span><strong>Demand:</strong> <span class="demand-status high">High</span></span>
+                            <span><strong>Supply:</strong> <span class="supply-status medium">Medium</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/kkv_market_analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKV - kisan krishi aur vyapar</title>
+    <meta name="keywords" content="organic food, agriculture, farmers, marketplace">
+    <meta name="description" content="A platform for buying and selling organic food and agricultural products.">
+
+    <!-- Favicon -->
+    <link href="/IMAGES/KKV2.png" rel="icon">
+
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/kkv_mainpage.css">
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,pa,bn,mr,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<body>
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+    <!-- Header -->
+    <header class="header" style="background-color: transparent;">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="/IMAGES/KKV2.png" alt="KKV Logo" class="logo">
+                    <div>
+                        <div class="brand-name">KKV</div>
+                        <div class="brand-fullform">KISAAN KRISHI AUR VAYAPAAR</div>
+                    </div>
+                </div>
+                
+
+                <nav class="nav-links">
+                    <a href="/html/kkv_mainpage.html"><button class="nav-btn">
+                        <i class="fas fa-home"></i>Home
+                    </button></a>
+                    <a href="/html/kkv_login.html"><button class="nav-btn">
+                        <i class="fas fa-user"></i>Login
+                    </button></a>
+                    <a href="/html/kkv_contact.html"><button class="nav-btn">
+                        <i class="fas fa-phone-alt"></i>Contact
+                    </button></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+<section>
+    <div class="slider-container">
+        <button class="arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="/IMAGES/main image.png" alt="Image 1">
+                <div class="text-overlay" style="color: white; text-shadow: 5px 0 4px rgba(0, 0, 0, 2);" >Welcome to the Farmers Crop Marketplace</div>
+            </div>
+            <div class="slide">
+                <img src="/IMAGES/main page image 2.png" alt="Image 2">
+                <div class="text-overlay" style="color: white; text-shadow: 5px 0 4px rgba(0, 0, 0, 2);">KISAAN KRISHI OR VAYAPAAR</div>
+            </div>
+            <div class="slide">
+                <img src="/IMAGES/main page image 3.jpg" alt="Image 3">
+                <div class="text-overlay" style="color: white; text-shadow: 5px 0 4px rgba(0, 0, 0, 2);">Welcome to the one stop for farming solution</div>
+            </div>
+        </div>
+        <button class="arrow next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    
+</section>
+    <!-- About Section -->
+<section class="about">
+  <div class="container">
+      <div class="about-content">
+          <h1 data-aos="fade-right">Best Crops Fruits And Vegetables</h1>
+          <p data-aos="fade-right" data-aos-delay="100">The "best" types of crops, vegetables, and fruits are those considered highly nutritious, 
+            diverse in vitamins and minerals, readily available, adaptable to various climates, and offer a range of health benefits.</p>
+          <a href="#" class="btn" data-aos="fade-right" data-aos-delay="200">Read More</a>
+      </div>
+      <div class="about-img" data-aos="fade-left" data-aos-delay="300">
+          <img src="/IMAGES/front page farmar img edited.jpg" alt="About Us">
+      </div>
+  </div>
+</section>
+
+    <!-- Services Section -->
+  <div class="services-container" id="our-services">
+    <h1>Our Services</h1>
+    <div class="services-grid">
+      <!-- Service 1: Buy Products -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <h2>Buy Products</h2>
+        <p>Explore a wide range of fresh farm products directly from farmers.</p>
+        <button class="service-btn">Learn More</button>
+      </div>
+
+      <!-- Service 2: Sell Products -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-tractor"></i>
+        </div>
+        <h2>Sell Products</h2>
+        <p>List your farm products and reach a larger audience of buyers.</p>
+        <button class="service-btn">Learn More</button>
+      </div>
+
+      <!-- Service 3: Market Insights -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h2>Market Insights</h2>
+        <p>Get real-time market trends and pricing for your products.</p><br>
+        <button class="service-btn">Learn More</button>
+      </div>
+
+      <!-- Service 4: Logistics Support -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h2>Plant Disease Detection</h2>
+        <p>We provide Plant Disease Detector.</p>
+        <button class="service-btn">Learn More</button>
+      </div>
+    </div>
+  </div>
+
+    <section id="our-team">
+       <div class="behind-kkv"><solid><h1 align="center">MEET THE PEOPLE BEHIND KKV</h1></solid></div> 
+  <div class="team-container" id="our-team" align="center">
+    <!-- Team Member 1 -->
+    <div class="team-member">
+        <div class="member-image">
+            <img src="/IMAGES/aryan.jpg" alt="Team Member 1">
+        </div>
+        <div class="member-details">
+            <h2>ARYAN DHIMAN</h2>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Email:</strong> aryandhiman2605@gmail.com</p>
+            <p><strong>Phone:</strong> 9805297267</p>
+            <p><strong>Qualifications:</strong> B.Tech Computer Science Engineering</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/aryan-dhiman-98530b30b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BcgWafqx8RoCCDGa%2BF8%2B3Ow%3D%3D" target="_blank">LinkedIn</a>
+                <a href="https://github.com/account" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div><br>
+
+    <!-- Team Member 2 -->
+    <div class="team-member">
+        <div class="member-image">
+            <img src="/IMAGES/sahil.jpg" alt="Team Member 2">
+        </div>
+        <div class="member-details">
+            <h2>SAHIL THAKUR</h2>
+            <p><strong>Age:</strong> 18</p>
+            <p><strong>Email:</strong> sahilthakur78902u@gmail.com</p>
+            <p><strong>Phone:</strong> 7876574184</p>
+            <p><strong>Qualifications:</strong> Bachelor of Computer Application</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/sahil-thakur-121273351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                <a href="https://github.com/account" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div><br>
+
+    <!-- Team Member 3 -->
+    <div class="team-member">
+        <div class="member-image">
+            <img src="/IMAGES/Priyanshu.jpg" alt="Team Member 3">
+        </div>
+        <div class="member-details">
+            <h2>PRIYANSHU</h2>
+            <p><strong>Age:</strong> 18</p>
+            <p><strong>Email:</strong> priyanshushakya373@gmail.com</p>
+            <p><strong>Phone:</strong> 9651954404</p>
+            <p><strong>Qualifications:</strong> Bachelor of Computer Application</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/priyanshu-shakya-4701aa2a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Priyanshu7318" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div><br>
+
+    <!-- Team Member 4 -->
+    <div class="team-member">
+        <div class="member-image">
+            <img src="/IMAGES/pragya.jpg" alt="Team Member 4">
+        </div>
+        <div class="member-details">
+            <h2>PRAGYA RANA</h2>
+            <p><strong>Age:</strong> 17</p>
+            <p><strong>Email:</strong> pragyarana101@gmail.com</p>
+            <p><strong>Phone:</strong> 8923082787</p>
+            <p><strong>Qualifications:</strong> B.Tech Computer Science Engineering</p>
+            <div class="social-media">
+                <a href="http://www.linkedin.com/in/pragyarana101" target="_blank">LinkedIn</a>
+                <a href="https://github.com/PragyaRana" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div><br>
+
+     <!-- Testimonial Section -->
+  <div class="testimonial-section">
+    <div class="container">
+      <div class="section-header">
+        <h1>Customer Review</h1>
+        <p>Reviews are genuine and verified, providing a reliable source of information for buyers.</p>
+      </div>
+      <div class="testimonial-carousel">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-item">
+          <i class="fa fa-quote-left"></i>
+          <p>This website is very efficient and easy to use. I buy and sell my products here on a regular basis.</p>
+          <div class="d-flex">
+            <img src="/IMAGES/farmer1.jpg" alt="Ram Lal">
+            <div>
+              <h5>Ram Lal</h5>
+              <span>Farmer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-item">
+          <i class="fa fa-quote-left"></i>
+          <p>The website gives me the best dealing offers with buyers and sellers and provides me with more benefits.</p>
+          <div class="d-flex">
+            <img src="/IMAGES/farmer3.jpg" alt="Vishal Tiwari">
+            <div>
+              <h5>Vishal Tiwari</h5>
+              <span>Dealer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-item">
+          <i class="fa fa-quote-left"></i>
+          <p>I frequently use this website for buying and selling vegetables and fruits. It's very convenient.</p>
+          <div class="d-flex">
+            <img src="/IMAGES/farmer4.jpg" alt="Aaryan Kapoor">
+            <div>
+              <h5>Aaryan Kapoor</h5>
+              <span>Engineer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-item">
+          <i class="fa fa-quote-left"></i>
+          <p>There are many categories on this website for buying and selling, like crops, vegetables, fruits, machinery, etc.</p>
+          <div class="d-flex">
+            <img src="/IMAGES/farmer2.jpg" alt="Suresh Thakur">
+            <div>
+              <h5>Suresh Thakur</h5>
+              <span>Farmer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Start -->
+  <div class="blog-section">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">Latest Blog</h1>
+            <p class="section-description">Stay informed about the buying and selling strategies, and expert insights with our regularly updated blog featuring fresh articles on everything from property valuations to neighborhood updates.</p>
+        </div>
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-1.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-2.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-3.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-2.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-3.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="blog-post">
+                <img src="/IMAGES/blog-1.jpg" alt="Blog Image" class="blog-image">
+                <div class="blog-content">
+                    <a href="#" class="blog-title">How to cultivate organic fruits and vegetables in your own farm</a>
+                    <div class="blog-meta">
+                        <span class="blog-author"><i class="fa fa-user"></i> Admin</span>
+                        <span class="blog-date"><i class="fa fa-calendar"></i> 01 Jan, 2045</span>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+     <!-- Footer -->
+     <div class="footer">
+      <div class="container">
+          <div class="footer-grid">
+              <!-- kkv ki Info -->
+              <div class="footer-item">
+                  <h1 class="fw-bold text-primary mb-4">K<span class="text-secondary">K</span>V</h1>
+                  <p>Here is the KKV(KISAAN KRISHI OR VAYAPAAR) website for the buying or selling agricultural products like crops, vegetables, fruits, machinery, livestocks etc.</p>
+                  <div class="social-icons">
+                      <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-youtube"></i></a>
+                      <a class="btn btn-square btn-outline-light rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+
+              <!-- Address -->
+              <div class="footer-item">
+                  <h4 class="text-light mb-4">Address</h4>
+                  <p><i class="fa fa-map-marker-alt me-3"></i>Chandigarh, India</p>
+                  <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                  <p><i class="fa fa-envelope me-3"></i>info@KKV.com</p>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="footer-item">
+                  <h4 class="text-light mb-4">Quick Links</h4>
+                  <a class="btn btn-link" href="#">About Us</a>
+                  <a class="btn btn-link" href="#">Contact Us</a>
+                  <a class="btn btn-link" href="#">Our Services</a>
+                  <a class="btn btn-link" href="#">Terms & Condition</a>
+                  <a class="btn btn-link" href="#">Support</a>
+              </div>
+
+              <!-- Newsletter -->
+              <div class="footer-item">
+                  <h4 class="text-light mb-4">Newsletter</h4>
+                  <p>Access special promotions and deals only available to newsletter subscribers.</p>
+              </div>
+          </div>
+      </div>
+      <!-- License Section -->
+      <div class="license">
+          <div class="container">
+              <p class="text-center">
+                  &copy; <span class="highlight">2025 KKV</span>. All Rights Reserved. | 
+                  <a href="#">Privacy Policy</a> | 
+                  <a href="#">Terms of Service</a>
+              </p>
+          </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/02/23/11/20250223111831-T552BM4Y.js"></script>
+    
+    <script src="/js/kkv_mainpage.js"></script>
+    
+</body>
+</html>

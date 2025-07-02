@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kkv storage service</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="/css/kkv_storage.css">
+
+</head>
+<body>
+    <header class="header" style="background-color: transparent;">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="/IMAGES/KKV2.png" alt="KKV Logo" class="logo">
+                    <div>
+                        <div class="brand-name">KKV</div>
+                        <div class="brand-fullform">KISAAN KRISHI AUR VAYAPAAR</div>
+                    </div>
+                    <h1 style="padding-left: 230px;">STORAGE SERVICES</h1>
+                </div>
+                
+                <nav class="nav-links">
+                    <a href="/html/kkv_mainpage.html"><button class="nav-btn">
+                        <i class="fas fa-home"></i>Home
+                    </button></a>
+                    <a href="/html?kkv_contact.html"><button class="nav-btn">
+                        <i class="fas fa-phone-alt"></i>Contact
+                    </button></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="searchSection">
+        <form id="searchForm">
+            <div class="input-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="location" placeholder="Enter location (city, state)">
+                <div id="suggestionsList"></div>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-temperature-low"></i>
+                <select id="storage-type">
+                    <option value="">All Storage Types</option>
+                    <option value="cold">Cold Storage</option>
+                    <option value="dry">Dry Storage</option>
+                    <option value="mixed">Mixed Storage</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-apple-alt"></i>
+                <select id="produce-type">
+                    <option value="">All Produce</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="grains">Grains</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="searchButton">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </form>
+    </section>
+
+    <div id="mapContainer">
+        <div id="storageMap"></div>
+        <div class="map-overlay">
+            <h3>Storage Legend</h3>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2196F3;"></div>
+                <span>Cold Storage</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #FF9800;"></div>
+                <span>Dry Storage</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9C27B0;"></div>
+                <span>Mixed Storage</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="features">
+        <div class="feature-card" style="animation-delay: 0.2s;">
+            <i class="fas fa-thermometer-half"></i>
+            <h3>Temperature Controlled</h3>
+            <p>Our cold storage facilities maintain optimal temperatures to preserve your produce freshness.</p>
+        </div>
+        
+        <div class="feature-card" style="animation-delay: 0.4s;">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Secure Storage</h3>
+            <p>24/7 surveillance and advanced security systems to protect your valuable agricultural products.</p>
+        </div>
+        
+        <div class="feature-card" style="animation-delay: 0.6s;">
+            <i class="fas fa-truck"></i>
+            <h3>Easy Transportation</h3>
+            <p>Convenient locations with excellent transport links for easy movement of goods.</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-item">
+                    <h1 class="fw-bold text-primary mb-4">K<span class="text-secondary">K</span>V</h1>
+                    <p>Here is the KKV(KISAAN KRISHI OR VAYAPAAR) website for the buying or selling agricultural products like crops, vegetables, fruits, machinery, livestocks etc.</p>
+                    <div class="social-icons">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+  
+                <!-- Address -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Chandigarh, India</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-3"></i>info@KKV.com</p>
+                </div>
+  
+                <!-- Quick Links -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="#">About Us</a>
+                    <a class="btn btn-link" href="#">Contact Us</a>
+                    <a class="btn btn-link" href="#">Our Services</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Support</a>
+                </div>
+  
+                <!-- Newsletter -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Access special promotions and deals only available to newsletter subscribers.</p>
+                </div>
+            </div>
+        </div>
+        <!-- License Section -->
+        <div class="license">
+            <div class="container">
+                <p class="text-center">
+                    &copy; <span class="highlight">2025 KKV</span>. All Rights Reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+      </div>
+  
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/js/kkv_storage.js"></script>
+</body>
+</html>

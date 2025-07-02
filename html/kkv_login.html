@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <link rel="stylesheet" href="/css/kkv_login.css">
+  
+</head>
+<body>
+  <div class="wrapper">
+    <h1>LOG IN</h1>
+    <!-- Added id "loginForm" to the form -->
+    <form id="loginForm">
+      <div>
+        <label for="phone">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z"/>
+          </svg>
+        </label>
+        <input type="text" name="phone" id="phone" placeholder="Phone No." />
+      </div>
+      <div>
+        <label for="password">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M280-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 120q-100 0-170-70T40-480q0-100 70-170t170-70q81 0 141.5 46T506-560h335l79 79-140 160-100-79-80 80-80-80h-14q-25 72-87 116t-139 44Z"/>
+          </svg>
+        </label>
+        <input type="password" name="password" id="password" placeholder="Password" />
+      </div>
+      <button type="submit"></a>Login</a></button>
+      <p>Don't have an account? <a href="/html/kkv_signup.html">Signup</a></p>
+      <!-- Error message container -->
+      <div id="errorMessage"></div>
+    </form>
+  </div>
+  
+  <script src="/js/kkv_login.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Services</title>
+
+     <!-- Favicon -->
+     <link href="/Image/favicon.ico" rel="icon">
+     <!-- Font Awesome -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+     <!-- Swiper CSS (for the image slider) -->
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+     
+     <link rel="stylesheet" href="/css/kkv_transportation.css">
+
+</head>
+<body>
+    <header class="header" style="background-color: transparent;">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="/IMAGES/KKV2.png" alt="KKV Logo" class="logo">
+                    <div>
+                        <div class="brand-name">KKV</div>
+                        <div class="brand-fullform">KISAAN KRISHI OR VAYAPAAR</div>
+                    </div>
+                </div>
+                
+                <nav class="nav-links">
+                    <a href="/html/kkv_mainpage.html"><button class="nav-btn">
+                        <i class="fas fa-home"></i>Home
+                    </button></a>
+                    <a href="/html/kkv_contact.html"><button class="nav-btn">
+                        <i class="fas fa-phone-alt"></i>Contact
+                    </button></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+     <!-- Image Slider -->
+     <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('/IMAGES/transport\ vehicle\ img.jpg');">
+                <h1>Transportation Services</h1>
+            </div>
+            <div class="swiper-slide" style="background-image: url('/IMAGES/bulk\ img.jpg');">
+                <h1>Safe Delivery</h1>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+     <!-- Transportation Services Section -->
+     <section class="transportation-services">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Transportation Services</h1>
+                <p class="section-description">We provide seamless logistics and transportation solutions for your agricultural products. From farm to market, we ensure timely and safe delivery.</p>
+                <a href="#transportation-grid" class="cta-button">Explore Services</a>
+            </div>
+            <div class="transportation-grid" id="transportation-grid">
+                <!-- Service 1: Farmer to Market -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h2>Farmer to Market</h2>
+                    <p>Efficient transportation of crops, vegetables, and fruits directly from farms to markets.</p>
+                    <button class="service-btn">Learn More</button>
+                </div>
+
+                <!-- Service 2: Bulk Logistics -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h2>Bulk Logistics</h2>
+                    <p>Handling large quantities of agricultural products with care and precision.</p>
+                    <button class="service-btn">Learn More</button>
+                </div>
+
+                <!-- Service 3: Door-to-Door Delivery -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h2>Door-to-Door Delivery</h2>
+                    <p>Convenient delivery of products directly to your doorstep.</p>
+                    <button class="service-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-item">
+                    <h1 class="fw-bold text-primary mb-4">K<span class="text-secondary">K</span>V</h1>
+                    <p>Here is the KKV(KISAAN KRISHI OR VAYAPAAR) website for the buying or selling agricultural products like crops, vegetables, fruits, machinery, livestocks etc.</p>
+                    <div class="social-icons">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+  
+                <!-- Address -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Chandigarh, India</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-3"></i>info@KKV.com</p>
+                </div>
+  
+                <!-- Quick Links -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="#">About Us</a>
+                    <a class="btn btn-link" href="#">Contact Us</a>
+                    <a class="btn btn-link" href="#">Our Services</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Support</a>
+                </div>
+  
+                <!-- Newsletter -->
+                <div class="footer-item">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Access special promotions and deals only available to newsletter subscribers.</p>
+                </div>
+            </div>
+        </div>
+        <!-- License Section -->
+        <div class="license">
+            <div class="container">
+                <p class="text-center">
+                    &copy; <span class="highlight">2025 KKV</span>. All Rights Reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/kkv_transportation.js"></script>
+    
+</body>
+</html>

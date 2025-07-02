@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairmConnect - Sell Product</title>
+   
+    <link rel="stylesheet" href="/css/kkv_sellerform.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Connect Directly with Farmers & Buyers</h1>
+            <p>Fresh produce straight from the farm</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h1>FarmConnect - Sell Your Product</h1>
+        <form id="productForm" enctype="multipart/form-data" action="/PHP files/sellerform.php" method="post">
+            <!-- Product Section -->
+            <div class="form-section">
+                <h2>Freed - Sell Your product</h2>
+                <label class="required">Product Category</label>
+                <select name="product_category" required>
+                    <option value="">Select Category</option>
+                    <option>Vegetables</option>
+                    <option>Fruits</option>
+                    <option>Crops</option>
+                </select>
+            </div>
+
+            <!-- Product Information -->
+            <div class="form-section">
+                <h2>Product Details</h2>
+                <label class="required">Product Name</label>
+                <input type="text" required name="product_name" name="product_details">
+
+                <div class="row">
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label class="required">Price per kg (₹)</label>
+                            <input type="number" name="price" step="0.01" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="required">Available Quantity (kg)</label>
+                            <input type="number" name="quantity" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="required">Harvest Date</label>
+                            <input type="date" name="reg_date" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="form-section">
+                <h2>Product Image</h2>
+                <div class="image-upload">
+                    <input type="file" id="productImage" name="photo" accept="image/*" required>
+                    <p>Drag and drop or click to upload product image</p>
+                    <img id="image-preview" alt="Image Preview">
+                </div>
+            </div>
+
+            <!-- location & description Section -->
+            <div class="form-section">
+                <h2>Location & Description</h2>
+                <label class="required">Your Location</label>
+                <input type="text" name="pro_location" required>
+
+                <label class="required">Product Description</label>
+                <textarea rows="4" name="product_description" required></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="submit-btn">List Product</button>
+                <button type="reset" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/kkv_sellerform.js"></script>
+</body>
+</html>

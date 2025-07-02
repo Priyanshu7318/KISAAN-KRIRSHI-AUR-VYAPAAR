@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Product - KKV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <link rel="stylesheet" href="/css/kkv_rent_now_page.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rent This Product</h1>
+        <form id="rentForm" enctype="multipart/form-data" action="/PHP files/rentpage.php" method="post">
+        <div class="purchase-grid">
+            <div class="form-section">
+                <div class="date-range">
+                    <h2>Select Rental Period</h2>
+                    <div class="date-inputs">
+                        <div class="input-group">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" name="start_date" required min="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" name="end_date" required>
+                        </div>
+                    </div>
+                    <div class="rental-summary">
+                        <p>Rental Duration: <span id="duration">0 days</span></p>
+                        <p>Daily Rate: <span id="daily-rate">₹0</span></p>
+                    </div>
+                </div>
+
+                <h2>Personal Details</h2>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="full_name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" name="phone_no" required placeholder="Enter your mobile number">
+                </div>
+
+                <h2>Delivery Address</h2>
+                <div class="input-group">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="street_address" required placeholder="Enter your street address">
+                </div>
+
+                <div class="input-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required placeholder="Enter your city">
+                </div>
+
+                <div class="input-group">
+                    <label for="state">State</label>
+                    <select id="state" name="select_state" required>
+                        <option value="">Select State</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="CT">Chhattisgarh</option>
+                        <option value="DN">Dadra and Nagar Haveli</option>
+                        <option value="DD">Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="GA">Goa</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="LA">Ladakh</option>
+                        <option value="LD">Lakshadweep</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OR">Odisha</option>
+                        <option value="PY">Puducherry</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TG">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="UT">Uttarakhand</option>
+                        <option value="WB">West Bengal</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" id="pincode" name="pincode" required placeholder="Enter pincode">
+                </div>
+
+                <h2>Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>UPI</div>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <div>Card</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn">Confirm Rental</button>
+            </div>
+        </form>
+            <div class="order-summary">
+                <h2>Rental Summary</h2>
+                <div class="product-summary">
+                    <img src="" alt="Product Image" id="product-image" class="product-image">
+                    <h3 id="product-name"></h3>
+                    <p id="product-description"></p>
+                    
+                    <div class="price-summary">
+                        <div class="price-row">
+                            <span>Daily Rate:</span>
+                            <span id="rate-display">₹0</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Number of Days:</span>
+                            <span id="days-display">0</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Rental Amount:</span>
+                            <span id="rental-amount">₹0</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Security Deposit:</span>
+                            <span>₹1000</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Delivery:</span>
+                            <span>₹40</span>
+                        </div>
+                        <div class="price-row total-price">
+                            <span>Total Amount:</span>
+                            <span id="total-amount">₹1040</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/kkv_rent_now_page.js"></script>
+</body>
+</html>

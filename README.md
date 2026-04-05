@@ -1,5 +1,3 @@
-# hackmol6.0
-# hackmol6.0
 # Kisan, Krishi aur Vyapaar (KKV)
 
 **A digital marketplace enabling Indian farmers to buy and sell crops, fruits, and vegetables directly — eliminating middlemen and maximizing profits.**
